@@ -45,7 +45,12 @@ public class BinaryTreeNode implements TreeNode<BinaryTreeNode> {
 
     @Override
     public void midIterator(BinaryTreeNode root) {
-        
+        if (root == null) {
+            return;
+        }
+        midIterator(root.getLeftNode());
+        System.out.println(root.getValue());
+        midIterator(root.getRightNode());
     }
 
     public int getValue() {

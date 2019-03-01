@@ -17,5 +17,7 @@ public class BinaryTreeLauncher {
         root.insertNode(rightNode, root);
         root.insertNode(rightNode1, root);
         root.insertNode(rightNode2, root);
+        // 中序遍历
+        root.midIterator(root);
     }
 }
