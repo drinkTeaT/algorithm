@@ -1,5 +1,7 @@
 package algo.base;
 
+import ds.Tree.BinaryTreeNode;
+
 /**
  * 递归：
  * <p>
@@ -39,5 +41,21 @@ public class RecursiveThinking {
         }
         // 触底反弹
         return 1l;
+    }
+
+    /**
+     * 打印出深度为n的所有值
+     */
+    public void deapValue(BinaryTreeNode root, int n) {
+        // 满足进栈条件
+        if (root != null && n != 1) {
+            // 左侧递归
+            deapValue(root.getLeftNode(), n - 1);
+            deapValue(root.getRightNode(), n - 1);
+        } else {
+            if (root != null && n == 1) {    // 出栈
+                System.out.println(root.getValue());
+            }
+        }
     }
 }

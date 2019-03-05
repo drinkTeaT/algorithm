@@ -1,9 +1,12 @@
 package algo.base;
 
+import ds.Tree.BinaryTreeNode;
+
 /**
  * 递归
  */
 public class Recursive {
+
     /**
      * n的阶乘即 n!
      */
@@ -27,5 +30,19 @@ public class Recursive {
         long value = fibonacci(n - 1);
         long result = value + fibonacci(n - 2);
         return result;
+    }
+
+    /**
+     * 打印出深度为n的所有值
+     */
+    public void deapValue(BinaryTreeNode root, int n) {
+        if (root == null || n <= 0) {
+            return;
+        }
+        deapValue(root.getLeftNode(), n - 1);
+        if (n == 1) {
+            System.out.println(root.getValue());
+        }
+        deapValue(root.getRightNode(), n - 1);
     }
 }
