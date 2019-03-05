@@ -8,9 +8,9 @@ package algo.base;
  * <p>
  * 应用：
  * <p>
- * 1 每个树节点就是一个栈中的值；
+ * 1 判断是否满足进栈的条件；
  * 2 递归进栈；
- * 3 return 出栈并可对栈数据进行操作。
+ * 3 当满足出栈条件时，返回上层的“递归”方法下一行。
  */
 public class RecursiveThinking {
     /**
@@ -18,10 +18,10 @@ public class RecursiveThinking {
      * 例如数值是4：进栈过程-> 4,3,2；
      */
     public int multiplyNumber(int n) {
-        if (n != 1) {
+        if (n != 1) {// 进栈条件
             // 进栈过程 4,3,2
             int product = multiplyNumber(n - 1);
-            return product * n;// 开始出栈 2,3,4
+            return product * n;// 上层递归方法的下一行
         }
         // 触底开始出栈
         return 1;

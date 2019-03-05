@@ -3,6 +3,9 @@ package algo.base;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 递归专用
+ */
 public class RecursiveLauncher {
     public static void main(String[] args) {
         Recursive recursive = new Recursive();

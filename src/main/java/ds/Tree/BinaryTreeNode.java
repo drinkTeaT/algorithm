@@ -43,6 +43,11 @@ public class BinaryTreeNode implements TreeNode<BinaryTreeNode> {
         }
     }
 
+    /**
+     * 递归版中序遍历
+     *
+     * @param root
+     */
     @Override
     public void midIterator(BinaryTreeNode root) {
         if (root == null) {
@@ -51,6 +56,15 @@ public class BinaryTreeNode implements TreeNode<BinaryTreeNode> {
         midIterator(root.getLeftNode());
         System.out.println(root.getValue());
         midIterator(root.getRightNode());
+    }
+
+    /**
+     * 非递归中序遍历
+     *
+     * @param root
+     */
+    public void midNoIterate(BinaryTreeNode root) {
+        
     }
 
     public int getValue() {
