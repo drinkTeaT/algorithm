@@ -1,12 +1,10 @@
 package util;
 
 import ds.Tree.BinaryTreeNode;
-import ds.Tree.TreeNode;
 
 public class StaticUtil {
-    public static BinaryTreeNode root = buildTree();
 
-    static BinaryTreeNode buildTree() {
+    public static BinaryTreeNode buildTree() {
         BinaryTreeNode root = new BinaryTreeNode(40);
         BinaryTreeNode leftNode = new BinaryTreeNode(20);
         BinaryTreeNode rightNode = new BinaryTreeNode(60);
@@ -22,5 +20,9 @@ public class StaticUtil {
         root.insertNode(rightNode1, root);
         root.insertNode(rightNode2, root);
         return root;
+    }
+
+    public static int[] buildHeap() {
+        return new int[]{100, 90, 80, 30, 60, 50, 70, 20, 10, 40, 55, 45, 5};
     }
 }

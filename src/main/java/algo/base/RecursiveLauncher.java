@@ -13,7 +13,7 @@ public class RecursiveLauncher {
 
     public static void main(String[] args) {
 //        recursive.deapValue(StaticUtil.root, 3);
-        new RecursiveThinking().deapValue(StaticUtil.root, 3);
+        new RecursiveThinking().deapValue(StaticUtil.buildTree(), 4);
     }
 
     /**
