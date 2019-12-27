@@ -1,9 +1,6 @@
 package review.sort;
 
-import org.w3c.dom.ls.LSOutput;
 import util.StaticUtil;
-
-import java.util.Arrays;
 
 /**
  * Description 排序算法复习
@@ -21,12 +18,31 @@ public class SortAlgorithm {
                 }
             }
         }
-        for (int i : array){
+        printArray(array);
+    }
+
+    public static void insertionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int mark = array[i];
+            int j = i;
+            while (j > 0 && mark < array[j - 1]) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j] = mark;
+        }
+        printArray(array);
+    }
+
+    private static void printArray(int[] array) {
+        for (int i : array) {
             System.out.println(i);
         }
     }
 
     public static void main(String[] args) {
-        bubbleSort(StaticUtil.generateArray(100,100));
+        int[] array = StaticUtil.generateArray(100, 100);
+        bubbleSort(array);
+        insertionSort(array);
     }
 }
