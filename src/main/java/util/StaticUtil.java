@@ -1,6 +1,7 @@
 package util;
 
 import ds.Tree.BinaryTreeNode;
+import sort.MergeSort;
 
 public class StaticUtil {
 
@@ -24,5 +25,13 @@ public class StaticUtil {
 
     public static int[] buildHeap() {
         return new int[]{100, 90, 80, 30, 60, 50, 70, 20, 10, 40, 55, 45, 5};
+    }
+
+    public static int[] generateArray(int maxSize, int maxValue) {
+        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
+        }
+        return arr;
     }
 }
