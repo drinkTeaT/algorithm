@@ -1,5 +1,7 @@
 package graph;
 
+import util.StaticUtil;
+
 import java.util.Stack;
 
 /**
@@ -9,7 +11,8 @@ import java.util.Stack;
  **/
 public class GraphUtil {
     /**
-     * 深度优先搜索算法
+     * 深度优先搜索算法</br>
+     * 生成最小树
      *
      * @param graph
      */
@@ -55,25 +58,10 @@ public class GraphUtil {
     }
 
     public static void main(String[] args) {
-        Graph graph = generateGraph();
+        Graph graph = StaticUtil.generateGraph();
         System.out.println("dfs");
         dfs(graph);
         System.out.println("bfs");
         bfs(graph);
-    }
-
-    public static Graph generateGraph() {
-        Graph graph = new Graph();
-        graph.addVertex("A");
-        graph.addVertex("B");
-        graph.addVertex("C");
-        graph.addVertex("D");
-        graph.addVertex("E");
-
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(0, 3);
-        graph.addEdge(3, 4);
-        return graph;
     }
 }

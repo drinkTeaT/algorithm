@@ -18,8 +18,6 @@ public class RecursionAlgorithm {
      */
     public static long fibonacci(int n) {
         if (n <= 1) {
-            return 0l;
-        } else if (n == 2) {
             return 1l;
         } else {
             return fibonacci(n - 1) + fibonacci(n - 2);
@@ -57,12 +55,34 @@ public class RecursionAlgorithm {
         }
     }
 
+    /**
+     * 动态规划求解斐波那契
+     *
+     * @param n
+     */
+    public static int dynamicFibonacci(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        int last = 1;
+        int nextToLast = 1;
+        int answer = 1;
+        for (int i = 2; i <= n; i++) {
+            answer = last + nextToLast;
+            nextToLast = last;
+            last = answer;
+        }
+        return answer;
+    }
+
 
     public static void main(String[] args) {
 //        for (int i = 1; i < 20; i++) {
 //            System.out.println(fibonacci(i));
 //        }
-        printDeepOfTreeValue(StaticUtil.buildTree(), 4);
+//        printDeepOfTreeValue(StaticUtil.buildTree(), 4);
 //        treeRecursion();
+        System.out.println(dynamicFibonacci(4));
+        System.out.println(fibonacci(4));
     }
 }

@@ -1,7 +1,7 @@
 package util;
 
 import ds.Tree.BinaryTreeNode;
-import sort.MergeSort;
+import graph.Graph;
 
 public class StaticUtil {
 
@@ -21,6 +21,21 @@ public class StaticUtil {
         root.insertNode(rightNode1, root);
         root.insertNode(rightNode2, root);
         return root;
+    }
+
+    public static Graph generateGraph() {
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.addEdge(0, 3);
+        graph.addEdge(3, 4);
+        return graph;
     }
 
     public static int[] buildHeap() {
