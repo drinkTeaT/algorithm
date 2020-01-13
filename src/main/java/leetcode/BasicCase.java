@@ -23,4 +23,14 @@ public class BasicCase {
             nums1[i--] = m >= 0 && nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
         }
     }
+
+    /**
+     * 字符串翻转
+     *
+     * @param str
+     * @return
+     */
+    public static String reverseString(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
 }
