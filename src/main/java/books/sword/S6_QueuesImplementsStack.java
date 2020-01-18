@@ -32,6 +32,11 @@ class QueueStack1<T> {
         queue1.offer(t);
     }
 
+    /**
+     * 捕捉最后一个值，作为栈pop的对象
+     *
+     * @return
+     */
     public T deleteHead() {
         T t = null;
         while (!queue1.isEmpty()) {
