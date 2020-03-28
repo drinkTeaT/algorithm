@@ -194,7 +194,7 @@ class ReadSet implements Set{
 }
 
 /**
- * length toCharArray charAt String.valueOf()
+ * length toCharArray charAt String.valueOf() substring(0,1+1)
  */
 class ReadString{
     private String str;

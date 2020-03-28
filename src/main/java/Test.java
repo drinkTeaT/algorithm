@@ -1,7 +1,7 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Stack;
+import sort.MergeSort;
+import util.ListNode;
+
+import java.util.*;
 
 /**
  * Description
@@ -10,28 +10,25 @@ import java.util.Stack;
  **/
 public class Test {
     public static void main(String[] args) {
-//        System.out.println(new Solution().isValid("()"));
-        new Stack<>().isEmpty();
+        int[][] a = new int[][]{{4, 5}, {2, 6}, {5, 8}};
+        solution(a);
     }
 
-}
-class Solution {
-    public int largestRectangleArea(int[] heights) {
-        int max = 0;
-        for(int i = 0;i<heights.length;i++){
-            int j = i+1;
-            while(heights[j] >= heights[i]){
-                j++;
+    private static int[][] solution(int[][] a) {
+        List<int[]> list = new ArrayList<>();
+        Arrays.sort(a, (x, y) -> x[0] - y[0]);
+        for (int i = 1; i < a.length ; i++) {
+            if (a[i][0] <= a[i-1][1]){
+                a[i][0] = a[i][0] < a[i-1][0] ? a[i][0] : a[i-1][0];
+                a[i][1] = a[i][1] < a[i-1][1] ? a[i-1][1] : a[i][1];
+            }else{
+                list.add(a[i-1]);
             }
-            int k = i-1;
-            while(heights[k] >= heights[i]){
-                k++;
-            }
-            int temp = j - k - 1;
-            if(temp*heights[i] > max){
-                max = temp*heights[i];
+            if (i == a.length - 1){
+                list.add(a[i]);
             }
         }
-        return max;
+        return list.toArray(new int[0][]);
+
     }
 }

@@ -17,23 +17,18 @@ public class S3_ListReverse {
     }
 
     /**
-     * 放入栈中 没解决
+     *
      */
     public static ListNode solution1(ListNode node) {
-        if (node == null) {
-            return null;
+        ListNode prev = null;
+        ListNode curr = node;
+        while (curr !=null){
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
         }
-        Stack<Integer> temp = new Stack<>();
-        while (node != null) {
-            temp.push(node.val);
-            node = node.next;
-        }
-        ListNode result = new ListNode(temp.pop());
-        result.next = new ListNode(temp.pop());
-        while (!temp.isEmpty()) {
-
-        }
-        return result;
+        return prev;
     }
 
     /**
