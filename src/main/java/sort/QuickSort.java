@@ -5,42 +5,80 @@ package sort;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] a = MergeSort.generateRandomArray(100,100);
-        MergeSort.printArray(a);
-        new Solution().solution(a,0,a.length-1);
-        MergeSort.printArray(a);
+        int[] a = MergeSort.generateRandomArray(100, 100);
+        sort.MergeSort.printArray(a);
+        new QuickSort1().solution(a);
+        sort.MergeSort.printArray(a);
     }
-
 }
 
-class Solution{
-
-    public void solution(int[] nums,int l,int r){
-        if(l >= r){
-            return;
-        }
-        int p = partition(nums,l,r);
-        solution(nums,l,p-1);
-        solution(nums,p+1,r);
+class QuickSort1 {
+    public void solution(int[] a) {
+        quick(a, 0, a.length - 1);
     }
 
-    private int partition(int[] nums, int l, int r) {
-        // j表示把小的往左移
+    private void quick(int[] a, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int p = part(a, l, r);
+        quick(a, l, p - 1);
+        quick(a, p + 1, r);
+    }
+
+    private int part(int[] a, int l, int r) {
+        swap(a,l + (r - l)/2,r);
         int i = 0;
         int j = 0;
-        for( i = l,j = l;j < r;j++){
-            if(nums[r] >= nums[j]){
-                swap(nums,i,j);
-                i++;
+        for (i = l, j = l; j < r; j++) {
+            if (a[r] >= a[j]) {
+                swap(a, i++, j);
             }
         }
-        swap(nums,i,j);
+        swap(a, i, j);
         return i;
     }
 
-    private void swap(int[] nums,int l,int r){
-        int temp = nums[l];
-        nums[l] = nums[r];
-        nums[r] = temp;
+    private void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+}
+
+class MergeSort1 {
+    public void solution(int[] a) {
+        quick(a, 0, a.length - 1);
+    }
+
+    private void quick(int[] a, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int m = l + (r - l) / 2;
+        quick(a, l, m);
+        quick(a, m + 1, r);
+        merge(a,l,r);
+    }
+
+    private void merge(int[] a, int l, int r) {
+        int m = l + (r - l)/2;
+        int[] copy = a.clone();
+        int i = l;
+        int j = m + 1;
+        int k = l;
+        while(i <= m && j <= r){
+            if(copy[i] > copy[j]){
+                a[k++] = copy[j++];
+            }else{
+                a[k++] = copy[i++];
+            }
+        }
+        while (i <= m){
+            a[k++] = copy[i++];
+        }
+        while (j <= r){
+            a[k++] = copy[j++];
+        }
     }
 }

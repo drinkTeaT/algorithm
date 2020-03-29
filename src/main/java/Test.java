@@ -1,3 +1,5 @@
+import sort.MergeSort;
+
 /**
  * Description
  * Author liuweibin
@@ -5,14 +7,14 @@
  **/
 public class Test {
     public static void main(String[] args) {
-        int[] a = sort.MergeSort.generateRandomArray(100, 100);
-        sort.MergeSort.printArray(a);
-        new MergeSort().solution(a);
-        sort.MergeSort.printArray(a);
+        int[] a = MergeSort.generateRandomArray(100, 100);
+        MergeSort.printArray(a);
+        new QuickSort1().solution(a);
+        MergeSort.printArray(a);
     }
 }
 
-class QuickSort {
+class QuickSort1 {
     public void solution(int[] a) {
         quick(a, 0, a.length - 1);
     }
@@ -27,6 +29,7 @@ class QuickSort {
     }
 
     private int part(int[] a, int l, int r) {
+        swap(a,l + (r - l)/2,r);
         int i = 0;
         int j = 0;
         for (i = l, j = l; j < r; j++) {
@@ -45,7 +48,7 @@ class QuickSort {
     }
 }
 
-class MergeSort {
+class MergeSort1 {
     public void solution(int[] a) {
         quick(a, 0, a.length - 1);
     }
