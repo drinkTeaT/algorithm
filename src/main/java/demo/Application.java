@@ -7,7 +7,7 @@ package demo;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new FibSolution(42);
+        ISolution solution = new ClimbSolution(40);
         solution.solution();
     }
 
