@@ -3,9 +3,6 @@ package demo.solution;
 import demo.ISolution;
 import lombok.AllArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author EDZ
  * @description leetcode-5 最长回文子串；复杂度有点高
@@ -25,13 +22,13 @@ public class PalindromicSolution implements ISolution {
     }
 
     private String longestPalindromeSubseq(String s) {
+        if(s == null || s.length() == 0){
+            return s;
+        }
         String max = s.substring(0, 1);
         for (int i = 0; i < s.length(); i++) {
             for (int j = i + 2; j <= s.length(); j++) {
                 String s1 = s.substring(i, j);
-                if (max.length() > s1.length()/2){
-                    return max;
-                }
                 if (isPalindrome(max, s1)) {
                     max = s1.length() > max.length() ? s1 : max;
                 }
