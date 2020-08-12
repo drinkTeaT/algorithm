@@ -7,6 +7,8 @@ package demo;
  */
 public class Application {
     public static void main(String[] args) {
-
+        ISolution solution = new FabSolution(8);
+        solution.solution();
     }
+
 }
