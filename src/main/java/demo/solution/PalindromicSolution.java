@@ -29,6 +29,9 @@ public class PalindromicSolution implements ISolution {
         for (int i = 0; i < s.length(); i++) {
             for (int j = i + 2; j <= s.length(); j++) {
                 String s1 = s.substring(i, j);
+                if (max.length() > s1.length()){
+                    continue;
+                }
                 if (isPalindrome(max, s1)) {
                     max = s1.length() > max.length() ? s1 : max;
                 }
