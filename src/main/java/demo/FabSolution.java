@@ -14,8 +14,12 @@ public class FabSolution implements ISolution {
 
     @Override
     public void solution() {
+        long start = System.currentTimeMillis();
         System.out.println("递归值：" + multiplyNumber(n));
+        long end = System.currentTimeMillis();
         System.out.println("动态规划值：" + dynamicNumber(n));
+        long end1 = System.currentTimeMillis();
+        System.out.println("递归耗时：" + (end - start) / 1000 + " 动态规划耗时:" + (end1 - end) / 1000);
     }
 
     /**
