@@ -1,5 +1,6 @@
-package demo;
+package demo.solution;
 
+import demo.ISolution;
 import lombok.AllArgsConstructor;
 
 /**
@@ -8,7 +9,8 @@ import lombok.AllArgsConstructor;
  * @date 2020/8/12 14:47
  */
 @AllArgsConstructor
-public class NSolution implements ISolution {
+public class
+NSolution implements ISolution {
     private int n;
 
     @Override

@@ -1,5 +1,6 @@
-package demo;
+package demo.solution;
 
+import demo.ISolution;
 import lombok.AllArgsConstructor;
 
 /**

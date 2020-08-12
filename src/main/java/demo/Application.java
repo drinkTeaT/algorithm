@@ -1,5 +1,8 @@
 package demo;
 
+import demo.solution.ClimbSolution;
+import demo.solution.PalindromicSolution;
+
 /**
  * @author EDZ
  * @description
@@ -7,7 +10,7 @@ package demo;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new ClimbSolution(40);
+        ISolution solution = new PalindromicSolution("babab");
         solution.solution();
     }
 
