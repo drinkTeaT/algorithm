@@ -1,7 +1,6 @@
 package demo;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author EDZ
@@ -9,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2020/8/12 14:47
  */
 @AllArgsConstructor
-public class FabSolution implements ISolution {
+public class NSolution implements ISolution {
     private int n;
 
     @Override
@@ -19,7 +18,7 @@ public class FabSolution implements ISolution {
         long end = System.currentTimeMillis();
         System.out.println("动态规划值：" + dynamicNumber(n));
         long end1 = System.currentTimeMillis();
-        System.out.println("递归耗时：" + (end - start) / 1000 + " 动态规划耗时:" + (end1 - end) / 1000);
+        System.out.println("递归耗时：" + (end - start) + " 动态规划耗时:" + (end1 - end));
     }
 
     /**
