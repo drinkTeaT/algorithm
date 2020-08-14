@@ -1,7 +1,6 @@
 package demo;
 
-import demo.solution.ClimbSolution;
-import demo.solution.PalindromicSolution;
+import demo.solution.conclusion.BiggestMultiSubArraySolution;
 
 /**
  * @author EDZ
@@ -10,7 +9,7 @@ import demo.solution.PalindromicSolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new PalindromicSolution("babab");
+        ISolution solution = new BiggestMultiSubArraySolution(new int[]{2, 3, -2, 4});
         solution.solution();
     }
 

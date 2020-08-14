@@ -1,0 +1,2 @@
+DeCodeWaySolution(解码方法)
+SearchRangeSolution(在排序数组查找元素第一个和最后一个位置)
