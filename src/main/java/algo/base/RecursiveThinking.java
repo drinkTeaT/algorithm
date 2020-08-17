@@ -15,8 +15,14 @@ import ds.Tree.BinaryTreeNode;
  * 2 递归进栈；
  * 3 当满足出栈条件时，返回上层的“递归”方法下一行。
  * <p>
- *     递归能不能对中途节点的值进行判断?
- *     还是只能返回触底返回设置的值?
+ * 疑惑：
+ * 递归能不能对中途节点的值进行判断?
+ * 还是只能返回触底返回设置的值?
+ * </p>
+ * <p>
+ * 疑惑解答：
+ * 1，不能在中途返回值即不能return，不然递归不起作用
+ * 2，对要修改值的，可以用包装类型 参考：DeCodeWaySolution
  * </p>
  */
 public class RecursiveThinking {
@@ -25,10 +31,12 @@ public class RecursiveThinking {
      * 例如数值是4：进栈过程-> 4,3,2；
      */
     public int multiplyNumber(int n) {
-        if (n != 1) {// 进栈条件
+        // 进栈条件
+        if (n != 1) {
             // 进栈过程 4,3,2
             int product = multiplyNumber(n - 1);
-            return product * n;// 上层递归方法的下一行
+            // 上层递归方法的下一行
+            return product * n;
         }
         // 触底开始出栈
         return 1;
@@ -45,7 +53,7 @@ public class RecursiveThinking {
             return result;
         }
         // 触底反弹
-        return 1l;
+        return 1L;
     }
 
     /**
@@ -58,7 +66,8 @@ public class RecursiveThinking {
             deapValue(root.getLeftNode(), n - 1);
             deapValue(root.getRightNode(), n - 1);
         } else {
-            if (root != null && n == 1) {    // 出栈
+            if (root != null && n == 1) {
+                // 出栈
                 System.out.println(root.getValue());
             }
         }
