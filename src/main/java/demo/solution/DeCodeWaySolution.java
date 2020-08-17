@@ -48,7 +48,11 @@ public class DeCodeWaySolution implements ISolution {
         return left + right;
     }
 
-    public int dynamicSolution(String s) {
+    private int myDynamicSolution(String s) {
+        return 0;
+    }
+
+    private int dynamicSolution(String s) {
         int len = s.length();
         if (len == 0) {
             return 0;

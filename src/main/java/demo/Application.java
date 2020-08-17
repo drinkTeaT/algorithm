@@ -10,7 +10,7 @@ import demo.solution.conclusion.BiggestMultiSubArraySolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new DeCodeWaySolution("22000022", 0);
+        ISolution solution = new DeCodeWaySolution("291834729", 0);
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));
