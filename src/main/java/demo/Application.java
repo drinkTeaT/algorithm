@@ -1,5 +1,6 @@
 package demo;
 
+import demo.solution.DeCodeWaySolution;
 import demo.solution.conclusion.BiggestMultiSubArraySolution;
 
 /**
@@ -9,7 +10,7 @@ import demo.solution.conclusion.BiggestMultiSubArraySolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new BiggestMultiSubArraySolution(new int[]{2, 3, -2, 4});
+        ISolution solution = new DeCodeWaySolution("07",0);
         solution.solution();
     }
 

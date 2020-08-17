@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 
 /**
  * @author EDZ
- * @description 乘积最大连续子数组
+ * @description 乘积最大连续子数组 152
  * 输入: [2,3,-2,4]
  * 输出: 6
  * 解释: 子数组 [2,3] 有最大乘积 6。

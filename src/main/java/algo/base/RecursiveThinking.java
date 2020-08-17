@@ -14,6 +14,10 @@ import ds.Tree.BinaryTreeNode;
  * 1 判断是否满足进栈的条件；
  * 2 递归进栈；
  * 3 当满足出栈条件时，返回上层的“递归”方法下一行。
+ * <p>
+ *     递归能不能对中途节点的值进行判断?
+ *     还是只能返回触底返回设置的值?
+ * </p>
  */
 public class RecursiveThinking {
     /**

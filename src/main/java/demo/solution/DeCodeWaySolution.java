@@ -14,32 +14,33 @@ import java.util.Map;
 @AllArgsConstructor
 public class DeCodeWaySolution implements ISolution {
     private String s;
+    private int count;
 
     @Override
     public void solution() {
-        System.out.println(numDecodings(s));
+        numDecodings(s);
     }
 
     private int numDecodings(String s) {
-        return doDecode(s, 0);
+        doDecode(s);
+        return 1;
     }
 
-    private int doDecode(String s, int start) {
-        if (s == null || "".equals(s) || "0".equals(s)) {
-            return 0;
+    private void doDecode(String s) {
+        if (s == null || s.length() < 1) {
+            return;
         }
-        if (s.length()-(start+1) == 1 && Integer.valueOf(s.substring((start+1),1)).intValue() != 0) {
-            return 1;
+        String leftStr = s.length() > 1 ? s.substring(1) : "";
+        String leftNode = s.substring(0, 1);
+        doDecode(leftStr);
+        System.out.println(leftNode);
+        if (s.length() < 2) {
+            return;
         }
-        if (s.length()-(start+1) == 1 && Integer.valueOf(s.substring((start+1),1)).intValue() == 0){
-            return 0;
-        }
-        if (s.length()-(start+2) == 2 && Integer.valueOf(s.substring((start+2),2)).intValue() < 26){
-            return 1;
-        }
-        int leftCount = doDecode(s.substring((start + 1), s.length() - (start + 1)), start + 1);
-        int rightCount = doDecode(s.substring((start + 2), s.length() - (start + 2)), start + 2);
-        return leftCount + rightCount;
+        String rightStr = s.length() > 2 ? s.substring(2) : "";
+        String rightNode = s.length() > 2 ? s.substring(0, 2) : s;
+        doDecode(rightStr);
+        System.out.println(rightNode);
     }
 }
 /**
