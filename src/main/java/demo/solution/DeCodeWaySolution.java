@@ -42,11 +42,16 @@ public class DeCodeWaySolution implements ISolution {
         String rightNode = s.length() > 2 ? s.substring(0, 2) : s;
         int right = doDecode(rightStr);
         // 不满足条件返回
-        if (Integer.valueOf(rightNode).intValue() < 0 || Integer.valueOf(rightNode).intValue() > 26) {
+        if (Integer.valueOf(rightNode).intValue() < 10 || Integer.valueOf(rightNode).intValue() > 26) {
             right = new Integer(0);
         }
         return left + right;
     }
+
+
+//    private Integer dynamicSolution(String s){
+//
+//    }
 }
 /**
  * 123
