@@ -16,14 +16,17 @@ import ds.Tree.BinaryTreeNode;
  * 3 当满足出栈条件时，返回上层的“递归”方法下一行。
  * <p>
  * 疑惑：
- * 递归能不能对中途节点的值进行判断?
- * 还是只能返回触底返回设置的值?
+ * 1 递归能不能对中途节点的值进行判断?还是只能返回触底返回设置的值?
+ * 2 多个子递归不能在中途判断，有没有一种可能就是在中途判断但是是走递归的形式呢？实现疑惑1的效果，不要求是递归。
+ * 3 单链表变成多链递归模型
  * </p>
  * <p>
  * 疑惑解答：
- * 1，不能在中途返回值即不能return，不然递归不起作用
- * 2，对要修改值的，可以用包装类型 参考：DeCodeWaySolution
+ * 1，不能在中途返回值即不能return，不然递归不起作用。对要修改值的，可以用包装类型 参考：DeCodeWaySolution
+ * 2，动态规划吧，顺着递归图并收集结果的解法。参考StringToDoubleString
+ * 3，用两个递归组合，参考StringToDoubleString
  * </p>
+ * @author EDZ
  */
 public class RecursiveThinking {
     /**

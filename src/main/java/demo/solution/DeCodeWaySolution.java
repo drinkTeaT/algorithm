@@ -16,6 +16,7 @@ public class DeCodeWaySolution implements ISolution {
     @Override
     public void solution() {
         System.out.println(numDecodings(s));
+        System.out.println(myDynamicSolution(s));
     }
 
     private int numDecodings(String s) {

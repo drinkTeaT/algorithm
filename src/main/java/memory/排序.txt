@@ -1,0 +1,4 @@
+归并排序:
+1 结构321,3个入参数组，low，high，2个递归，1个归并
+2 复制一份数组，建立三个指针，移动指针在原始数组变动，其余两个低指针在复制数组移动
+3 操作 http://s0.lgstatic.com/i/image2/M01/91/2B/CgotOV2IiXSAfGJAAF-ZK14qZ9Q978.gif
