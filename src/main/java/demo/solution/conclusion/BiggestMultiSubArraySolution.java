@@ -9,6 +9,10 @@ import lombok.AllArgsConstructor;
  * 输入: [2,3,-2,4]
  * 输出: 6
  * 解释: 子数组 [2,3] 有最大乘积 6。
+ * <p>
+ * 输入: [0,2,3,-2,4,-1]
+ * 输出: 48
+ * 解释: 子数组 [2,3,-2,4,-1] 有最大乘积 48。
  * @date 2020/8/14 11:25
  */
 @AllArgsConstructor
@@ -21,12 +25,14 @@ public class BiggestMultiSubArraySolution implements ISolution {
     }
 
     private int maxProduct(int[] nums) {
-        int max = nums[0];
-        int i = 0;
-        while (++i < nums.length) {
-            int value = nums[i] * nums[i - 1];
-            max = max > value ? max : value;
+        int[][] res = new int[nums.length][2];
+        // 负数值
+        res[0][0] = 2;
+        // 最大值
+        res[0][1] = 2;
+        for (int i = 1; i < nums.length; i++) {
+
         }
-        return max;
+        return 0;
     }
 }

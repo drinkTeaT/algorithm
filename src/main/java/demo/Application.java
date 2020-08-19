@@ -1,6 +1,8 @@
 package demo;
 
 import demo.solution.StringToDoubleString;
+import demo.solution.conclusion.BiggestMultiSubArraySolution;
+import demo.solution.conclusion.RotateArraySolution;
 
 /**
  * @author EDZ
@@ -9,7 +11,7 @@ import demo.solution.StringToDoubleString;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new StringToDoubleString("3247538");
+        ISolution solution = new BiggestMultiSubArraySolution(new int[]{2, 3, -2, 4,-1});
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));
