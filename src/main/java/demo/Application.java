@@ -1,6 +1,6 @@
 package demo;
 
-import demo.solution.LongestPrefixSolution;
+import demo.solution.DailyTemperaturesSolution;
 
 /**
  * @author EDZ
@@ -9,7 +9,7 @@ import demo.solution.LongestPrefixSolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new LongestPrefixSolution(new String[]{"flower", "flow", "flight"});
+        ISolution solution = new DailyTemperaturesSolution(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));
