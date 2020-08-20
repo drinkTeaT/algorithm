@@ -1,8 +1,6 @@
 package demo;
 
-import demo.solution.StringToDoubleString;
-import demo.solution.conclusion.BiggestMultiSubArraySolution;
-import demo.solution.conclusion.RotateArraySolution;
+import demo.solution.LongestPrefixSolution;
 
 /**
  * @author EDZ
@@ -11,7 +9,7 @@ import demo.solution.conclusion.RotateArraySolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new BiggestMultiSubArraySolution(new int[]{2, 3, -2, 4,-1});
+        ISolution solution = new LongestPrefixSolution(new String[]{"flower", "flow", "flight"});
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));
