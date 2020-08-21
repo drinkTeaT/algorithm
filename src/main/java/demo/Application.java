@@ -1,6 +1,8 @@
 package demo;
 
 import demo.solution.DailyTemperaturesSolution;
+import demo.solution.MinEqualOperationSolution;
+import demo.solution.PalindromicSubstringsSolution;
 
 /**
  * @author EDZ
@@ -9,7 +11,7 @@ import demo.solution.DailyTemperaturesSolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new DailyTemperaturesSolution(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
+        ISolution solution = new MinEqualOperationSolution(2);
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));
