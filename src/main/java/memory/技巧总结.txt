@@ -1,0 +1,6 @@
+无论怎么样，也要把暴力解决作为底裤！
+
+1 Arrays.sort(arr);
+原地排序数组arr，为void方法。
+
+2 s.substring()而不是subString()
