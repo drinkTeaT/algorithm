@@ -1,3 +1,4 @@
 SearchRangeSolution(在排序数组查找元素第一个和最后一个位置)
 BiggestMultiSubArraySolution(乘积最大连续子数组)
 OddEvenLinkListSolution(奇偶链表)
+RepeatedSubstringSolution(重复子字符串)
