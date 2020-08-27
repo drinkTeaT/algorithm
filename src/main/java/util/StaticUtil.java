@@ -49,4 +49,9 @@ public class StaticUtil {
         }
         return arr;
     }
+
+    public static TreeNode buildTreeNode(int[] nodes){
+        TreeNode root = new TreeNode(nodes[0]);
+        return root;
+    }
 }
