@@ -10,5 +10,6 @@ public class PrintUtil {
         for (int i : a) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
