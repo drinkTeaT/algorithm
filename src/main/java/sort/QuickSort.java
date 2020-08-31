@@ -5,7 +5,7 @@ package sort;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] a = MergeSort.generateRandomArray(100, 100);
+        int[] a = MergeSort.generateRandomArray(10, 100);
         sort.MergeSort.printArray(a);
         new QuickSort1().solution(a);
         sort.MergeSort.printArray(a);
@@ -27,10 +27,12 @@ class QuickSort1 {
     }
 
     private int part(int[] a, int l, int r) {
-        swap(a,l + (r - l)/2,r);
-        int i = 0;
-        int j = 0;
-        for (i = l, j = l; j < r; j++) {
+        swap(a, l + (r - l) / 2, r);
+        // 小的值
+        int i = l;
+        // 正常遍历
+        int j = l;
+        for (; j < r; j++) {
             if (a[r] >= a[j]) {
                 swap(a, i++, j);
             }
@@ -58,26 +60,26 @@ class MergeSort1 {
         int m = l + (r - l) / 2;
         quick(a, l, m);
         quick(a, m + 1, r);
-        merge(a,l,r);
+        merge(a, l, r);
     }
 
     private void merge(int[] a, int l, int r) {
-        int m = l + (r - l)/2;
+        int m = l + (r - l) / 2;
         int[] copy = a.clone();
         int i = l;
         int j = m + 1;
         int k = l;
-        while(i <= m && j <= r){
-            if(copy[i] > copy[j]){
+        while (i <= m && j <= r) {
+            if (copy[i] > copy[j]) {
                 a[k++] = copy[j++];
-            }else{
+            } else {
                 a[k++] = copy[i++];
             }
         }
-        while (i <= m){
+        while (i <= m) {
             a[k++] = copy[i++];
         }
-        while (j <= r){
+        while (j <= r) {
             a[k++] = copy[j++];
         }
     }
