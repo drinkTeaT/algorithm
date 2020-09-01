@@ -1,6 +1,7 @@
 package demo;
 
 import demo.solution.CombinationSumSolution;
+import demo.solution.DailyTemperaturesSolution;
 import demo.solution.easy.TreeTargetSolution;
 import demo.solution.research.LetterCombinationsSolution;
 
@@ -11,7 +12,7 @@ import demo.solution.research.LetterCombinationsSolution;
  */
 public class Application {
     public static void main(String[] args) {
-        ISolution solution = new TreeTargetSolution();
+        ISolution solution = new DailyTemperaturesSolution(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
         long start = System.currentTimeMillis();
         solution.solution();
         System.out.println("耗时" + (System.currentTimeMillis() - start));

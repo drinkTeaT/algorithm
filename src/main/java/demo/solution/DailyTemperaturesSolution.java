@@ -18,7 +18,7 @@ public class DailyTemperaturesSolution implements ISolution {
 
     @Override
     public void solution() {
-        PrintUtil.printArray(dailyTemperatures(t));
+        PrintUtil.printArray(myDailyTemperatures(t));
     }
 
     private int[] dailyTemperatures(int[] t) {
@@ -36,6 +36,20 @@ public class DailyTemperaturesSolution implements ISolution {
             while (!stack.isEmpty() && t[i] > t[stack.peek()]) {
                 int d = stack.pop();
                 res[d] = i - d;
+            }
+            stack.push(i);
+        }
+        return res;
+    }
+
+    public int[] myDailyTemperatures(int[] t) {
+        Stack<Integer> stack = new Stack<>();
+        int[] res = new int[t.length];
+        for(int i = 0;i < t.length;i++){
+            // 出栈
+            while(!stack.isEmpty() && t[stack.peek()] < t[i]){
+                int v = stack.pop();
+                res[v] = i -v;
             }
             stack.push(i);
         }
