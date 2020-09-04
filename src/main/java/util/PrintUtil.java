@@ -12,4 +12,11 @@ public class PrintUtil {
         }
         System.out.println();
     }
+
+    public static void printArray(double[] a) {
+        for (double i : a) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
 }
