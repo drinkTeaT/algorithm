@@ -17,7 +17,7 @@ public class PalindromicSolution implements ISolution {
     @Override
     public void solution() {
         long start = System.currentTimeMillis();
-        System.out.println(longestPalindromeSubseq(s));
+        System.out.println(longestPalindrome(s));
         System.out.println(System.currentTimeMillis() - start);
     }
 
@@ -51,5 +51,32 @@ public class PalindromicSolution implements ISolution {
             }
         }
         return true;
+    }
+
+    private String max;
+    public String longestPalindrome(String s) {
+        max = s.substring(0,1);
+        int c = 0;
+        while(c < s.length()){
+            doExpand(s,c++);
+        }
+        return max;
+    }
+
+    private void doExpand(String s,int c){
+        int l = c;
+        int r = c;
+        while(l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)){
+            max = r - l+1 > max.length() ? s.substring(l,r - l + 1):max;
+            l--;
+            r++;
+        }
+        l = c;
+        r = c + 1;
+        while(l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)){
+            max = r - l+1 > max.length() ? s.substring(l,r - l + 1):max;
+            l--;
+            r++;
+        }
     }
 }
